@@ -1,0 +1,64 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="css_xhtml" />
+	<package name="default" extends="struts-default">
+		<default-action-ref name="listerCategorie" />
+
+		<action name="listerCategorie" class="actions.CategorieAction"
+			method="lister">
+			<result name="success">/jsp/listerCategorie.jsp</result>
+			<result name="input">/jsp/listerCategorie.jsp</result>
+		</action>
+		<action name="listerProduit" class="actions.ProduitAction"
+			method="lister">
+			<result name="success">/jsp/listerProduit.jsp</result>
+			<result name="input">/jsp/listerProduit.jsp</result>
+		</action>
+		<action name="listerProduit" class="actions.ProduitAction"
+			method="listerAll">
+			<result name="success">/jsp/listerProduit.jsp</result>
+			<result name="input">/jsp/listerProduit.jsp</result>
+		</action>
+		<action name="saisirCategorie" class="actions.CategorieAction"
+			method="saisir">
+			<result>/jsp/saisirCategorie.jsp</result>
+			<result name="input">/jsp/saisirCategorie.jsp</result>
+		</action>
+		<action name="saisirProduit" class="actions.ProduitAction"
+			method="saisir">
+			<result>/jsp/saisirProduit.jsp</result>
+			<result name="input">/jsp/saisirProduit.jsp</result>
+		</action>
+
+		<action name="enregistrerCategorie"
+			class="actions.CategorieAction" method="enregistrer">
+
+			<result name="success">/jsp/listerCategorie.jsp</result>
+			<result name="input">/jsp/saisirCategorie.jsp</result>
+			<result name="error">/jsp/saisirCategorie.jsp</result>
+		</action>
+
+		<action name="supprimerCategorie"
+			class="actions.CategorieAction" method="supprimer">
+			<result name="success">/jsp/listerCategorie.jsp</result>
+			<result name="input">/jsp/listerCategorie.jsp</result>
+		</action>
+
+		<action name="listePseudosCategorie"
+			class="actions.CategorieAction" method="listePseudosCategorie">
+			<result>/jsp/listePseudosCategorie.jsp</result>
+			<result name="input">/jsp/listePseudosCategorie.jsp</result>
+		</action>
+
+		<action name="detailsCategorie" class="actions.CategorieAction"
+			method="detailsCategorie">
+			<result>/jsp/detailsCategorie.jsp</result>
+			<result name="input">/jsp/detailsCategorie.jsp</result>
+		</action>
+
+	</package>
+</struts>
